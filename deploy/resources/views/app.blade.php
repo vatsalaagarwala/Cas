@@ -1,112 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Parking</title>
-    <link rel="icon" href="site_assets/img/favicon.png" />
-    {{-- <link rel="shortcut icon" href="{{ URL::asset('site_assets/img/'.config('site_favicon')) }}" type="image/x-icon"> --}}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/bootstrap.min.css') }}" />
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/animate.css') }}" />
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/owl.carousel.min.css') }}" />
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/themify-icons.css') }}" />
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/flaticon.css') }}" />
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/magnific-popup.css') }}" />
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/slick.css') }}" />
-    <!-- style CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/css/style.css') }}" />
+<head>
+<title>CAS Computers</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="CAS Computers project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/bootstrap4/bootstrap.min.css') }}">
+<link href="{{ URL::asset('site_assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/plugins/OwlCarousel2-2.2.1/animate.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/main_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/responsive.css') }}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" />
+<!-- LOGIN  -->
+<link href="{{ URL::asset('site_assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/contact.css') }}">
 
-    <link rel="stylesheet" href="{{ URL::asset('site_assets/niceselect/css/nice-select.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/contact_responsive.css') }}">
 
-   
-  </head>
-  <body>
+<!-- PRODUCT -->
 
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/product.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/product_responsive.css') }}">
 
+<!-- CATEGORIES -->
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/categories.css') }}">
 
-  @include("_particles.header")
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('site_assets/css/categories_responsive.css') }}">
+</head>
+<body>
+@include("_particles.header")
     @yield('content')
   @include("_particles.footer")
 
 
-
-
-  <script>
-    function myFunction() { // Declare a function
-      console.log("hey");
-    }
- 
-  myFunction(); // Call the function
-  </script>
-
-
-
-    <script>
-
-      //Google map link generator
-      function generate(){
-        var address = document.querySelector('#address').value;
-
-        function slugify(str){
-            return str.toLowerCase()
-            .replace(/\s+/g, '+') 
-          }
-        if(address.length != 0){
-            var addr = slugify(address)
-            var googlemap = 'https://www.google.com/maps/search/?api=1&query=' + addr
-            document.querySelector('#googlemap').value = '';
-            document.querySelector('#googlemap').value = googlemap;
-        }else{
-            document.querySelector('#googlemap').value = '';
-        }
-        
-      }
-
-    </script>
-
-  
-     <!-- jquery plugins here-->
-
-      <script src="https://use.fontawesome.com/d8775d5df2.js"></script>
-    <script src="{{ URL::asset('site_assets/js/jquery-1.12.1.min.js') }}"></script>
-    <!-- popper js -->
-    <script src="{{ URL::asset('site_assets/js/popper.min.js') }}"></script>
-    <!-- bootstrap js -->
-    <script src="{{ URL::asset('site_assets/js/bootstrap.min.js') }}"></script>
-    <!-- easing js -->
-    <script src="{{ URL::asset('site_assets/js/jquery.magnific-popup.js') }}"></script>
-    <!-- isotope js -->
-    <script src="{{ URL::asset('site_assets/js/isotope.pkgd.min.js') }}"></script>
-    <!-- particles js -->
-    <script src="{{ URL::asset('site_assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ URL::asset('site_assets/js/jquery.nice-select.min.js') }}"></script>
-    <!-- custom js -->
-    <script src="{{ URL::asset('site_assets/js/custom.js') }}"></script>
-    <!--register js-->
-    {{-- <script src="{{ URL::asset('site_assets/js/contact.js') }}"></script> --}}
-    <script src="{{ URL::asset('site_assets/js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ URL::asset('site_assets/js/jquery.form.js') }}"></script>
-    <script src="{{ URL::asset('site_assets/js/jquery.validate.min.js') }}"></script>
-    <script src="{{ URL::asset('site_assets/js/mail-script.js') }}"></script>
-    <!-- register js -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-
-
-    <script src="{{ URL::asset('site_assets/niceselect/js/jquery.nice-select.js') }}"></script>
-
-  </body>
+<script src="{{ URL::asset('site_assets/js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/css/bootstrap4/popper.js') }}"></script>
+<script src="{{ URL::asset('site_assets/css/bootstrap4/bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/greensock/TweenMax.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/greensock/TimelineMax.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/greensock/animation.gsap.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/easing/easing.js') }}"></script>
+<script src="{{ URL::asset('site_assets/plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ URL::asset('site_assets/js/custom.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<script src="{{ URL::asset('site_assets/js/contact.js') }}"></script>
+<script src="{{ URL::asset('site_assets/js/product.js') }}"></script>
+<script src="{{ URL::asset('site_assets/js/categories.js') }}"></script>
+</body>
 </html>

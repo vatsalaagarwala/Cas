@@ -6,10 +6,11 @@
 
 1. Vars and Inits
 2. Set Header
-3. Init Home Slider
-4. Init Search
-5. Init Menu
-6. Init Isotope
+3. Init Search
+4. Init Menu
+5. Init Image
+6. Init Quantity
+7. Init Isotope
 
 
 ******************************/
@@ -40,9 +41,10 @@ $(document).ready(function()
 		setHeader();
 	});
 
-	initHomeSlider();
 	initSearch();
 	initMenu();
+	initImage();
+	initQuantity();
 	initIsotope();
 
 	/* 
@@ -65,85 +67,7 @@ $(document).ready(function()
 
 	/* 
 
-	3. Init Home Slider
-
-	*/
-
-	function initHomeSlider()
-	{
-		if($('.home_slider').length)
-		{
-			var homeSlider = $('.home_slider');
-			homeSlider.owlCarousel(
-			{
-				items:1,
-				autoplay:true,
-				autoplayTimeout:10000,
-				loop:true,
-				nav:false,
-				smartSpeed:1200,
-				dotsSpeed:1200,
-				fluidSpeed:1200
-			});
-
-			/* Custom dots events */
-			if($('.home_slider_custom_dot').length)
-			{
-				$('.home_slider_custom_dot').on('click', function()
-				{
-					$('.home_slider_custom_dot').removeClass('active');
-					$(this).addClass('active');
-					homeSlider.trigger('to.owl.carousel', [$(this).index(), 1200]);
-				});
-			}
-
-			/* Change active class for dots when slide changes by nav or touch */
-			homeSlider.on('changed.owl.carousel', function(event)
-			{
-				$('.home_slider_custom_dot').removeClass('active');
-				$('.home_slider_custom_dots li').eq(event.page.index).addClass('active');
-			});
-
-			// add animate.css class(es) to the elements to be animated
-			function setAnimation ( _elem, _InOut )
-			{
-				// Store all animationend event name in a string.
-				// cf animate.css documentation
-				var animationEndEvent = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-
-				_elem.each ( function ()
-				{
-					var $elem = $(this);
-					var $animationType = 'animated ' + $elem.data( 'animation-' + _InOut );
-
-					$elem.addClass($animationType).one(animationEndEvent, function ()
-					{
-						$elem.removeClass($animationType); // remove animate.css Class at the end of the animations
-					});
-				});
-			}
-
-			// Fired before current slide change
-			homeSlider.on('change.owl.carousel', function(event)
-			{
-				var $currentItem = $('.home_slider_item', homeSlider).eq(event.item.index);
-				var $elemsToanim = $currentItem.find("[data-animation-out]");
-				setAnimation ($elemsToanim, 'out');
-			});
-
-			// Fired after current slide has been changed
-			homeSlider.on('changed.owl.carousel', function(event)
-			{
-				var $currentItem = $('.home_slider_item', homeSlider).eq(event.item.index);
-				var $elemsToanim = $currentItem.find("[data-animation-in]");
-				setAnimation ($elemsToanim, 'in');
-			})
-		}
-	}
-
-	/* 
-
-	4. Init Search
+	3. Init Search
 
 	*/
 
@@ -163,7 +87,7 @@ $(document).ready(function()
 
 	/* 
 
-	5. Init Menu
+	4. Init Menu
 
 	*/
 
@@ -255,7 +179,68 @@ $(document).ready(function()
 
 	/* 
 
-	6. Init Isotope
+	5. Init Image
+
+	*/
+
+	function initImage()
+	{
+		var images = $('.details_image_thumbnail');
+		var selected = $('.details_image_large img');
+
+		images.each(function()
+		{
+			var image = $(this);
+			image.on('click', function()
+			{
+				var imagePath = new String(image.data('image'));
+				selected.attr('src', imagePath);
+				images.removeClass('active');
+				image.addClass('active');
+			});
+		});
+	}
+
+	/* 
+
+	6. Init Quantity
+
+	*/
+
+	function initQuantity()
+	{
+		// Handle product quantity input
+		if($('.product_quantity').length)
+		{
+			var input = $('#quantity_input');
+			var incButton = $('#quantity_inc_button');
+			var decButton = $('#quantity_dec_button');
+
+			var originalVal;
+			var endVal;
+
+			incButton.on('click', function()
+			{
+				originalVal = input.val();
+				endVal = parseFloat(originalVal) + 1;
+				input.val(endVal);
+			});
+
+			decButton.on('click', function()
+			{
+				originalVal = input.val();
+				if(originalVal > 0)
+				{
+					endVal = parseFloat(originalVal) - 1;
+					input.val(endVal);
+				}
+			});
+		}
+	}
+
+	/* 
+
+	7. Init Isotope
 
 	*/
 

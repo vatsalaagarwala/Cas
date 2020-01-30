@@ -1,87 +1,26 @@
-<!-- footer part start-->
-    {{-- <footer class="footer-area"> --}}
-<div class="footer-area">
-       <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-sm-6 col-md-3 col-xl-3">
-            <div class="single-footer-widget footer_1">
-              <a href="#">
-                {{-- <img src="site_assets/img/xipaarlogo.png" alt="" width="120px"/> --}}
-              </a>
-              <div class="social_icon">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter-alt"></i></a>
-                <a href="#"><i class="ti-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-md-3">
-            <div class="single-footer-widget footer_2">
-              <h4>Company</h4>
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">About</a>
-                </li>
-                <li>
-                  <a href="#">Products</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-md-3">
-            <div class="single-footer-widget footer_2">
-              <h4>Resources</h4>
-              <ul>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-                <li>
-                  <a href="#">Terms & conditions</a>
-                </li>
-                <li>
-                  <a href="#">Privacy Policy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-md-3">
-            <div class="single-footer-widget footer_2">
-              <div class="single_contact_info">
-                <h3>India</h3>
-                <p>
-                  <i class="fa fa-phone"></i>
-                  &nbsp;&nbsp;
-                  +91 86382 91905
-                </p>
-                <p>
-                  <i class="fa fa-envelope-open"></i>
-                  &nbsp;&nbsp;
-                  parking.org@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="copyright_part_text text-center">
-              <div class="row">
-                <div class="col-lg-12">
-                  <p class="footer-text m-0">
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Built with <i class="ti-heart" style="color: red;" aria-hidden="true"></i> by <a href="https://cipherstudios.xyz" target="_blank">Cipher Studios</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img src="site_assets/img/animate_icon/icon_2.png" class="animation_icon_2" alt="">
+<div class="footer_overlay"></div>
+	<div class="footer">
+		<div class="footer_background" style="background-image:url(site_assets/images/footer3.jpg)"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
+						<div class="footer_logo"><a href="#">CAS Computers.</a></div>
+						<div class="copyright ml-auto mr-auto"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <br> Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://cipherstudios.xyz" target="_blank" style="color: black;">Cipher Studios - BlindSpot Media</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+						<div class="footer_social ml-lg-auto">
+							<ul>
+								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-    {{-- </footer> --}}
-    <!-- footer part end-->
+</div>
